@@ -1,14 +1,58 @@
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,300' 
+	rel='stylesheet' type='text/css'>
+
 <!doctype html>
 <html>
   <head>
+    <link href="http://i2.pinger.pl/pgr211/3677e724000b1e4c4d10d0b5/poop.png" rel="shortcut icon">
     <title>Week 4</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300' 
+	rel='stylesheet' type='text/css'>
+	<style>
+	  .font ul li {
+  color: #428bca;
+  list-style-type: none;
+}
+
+h1 {
+  color: #428bca;
+  margin-left: 160px;
+  text-align: center;
+  }
+  
+  .fwitter-header { 
+  font-family: "Lato";
+  color: #428bca;
+  background-color: #0052cc;
+  text-align: center;
+  list-style-type: none;
+  }
+  
+  body {
+  background-image: url("http://radio40.org/kttr/wp-content/uploads/2014/10/backgroundblue2.jpg");
+}
+	</style>
   </head>
   <body>
+    <nav class="fwitter-header">
+      <div class="font">
+      <ul>
+        <% if logged_in? %>
+            <li>Welcome, <%= current_user.username %></li>
+            <li><a href="/tweet">Post a Tweet!</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <% else %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        <% end %>
+      </ul>
+      </div>
+    </nav>
 
     <div class="container">
-      <h1>Welcome to Fwitter!</h1>
+      <h1>Welcome to the my crappy Fwitter!</h1>
       <%= yield %> 
       
       
